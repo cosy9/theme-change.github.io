@@ -168,3 +168,50 @@ header {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
+
+@media(max-width:500px) {
+    body {
+        width: 100 vw;
+    }
+    .dropdown {
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        width: 80px;
+        opacity: 0;
+        z-index: 2;
+        background: var(--bg-dropdown);
+        border-top: 0.5px solid var(--border-color);
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 3rem;
+        margin-top: 2rem;
+        padding: 0.5rem;
+        box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em;
+        transform: translateX(-40%);
+        transition: opacity .15s ease-out;
+    }
+    .has-dropdown:focus-within .dropdown {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    header {
+        width: 100%;
+        padding: 1em;
+        clip-path: polygon(50% 0%, 100% 0, 100% 91%, 50% 100%, 0 91%, 0 0);
+        background: var(--bg-nav);
+        margin-bottom: 1em;
+        padding-bottom: 3.5em;
+        text-align: center;
+    }
+    img {
+        width: 250px;
+        max-height: 250px;
+        object-fit: cover;
+        object-position: right;
+    }
+}
